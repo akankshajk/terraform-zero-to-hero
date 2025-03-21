@@ -1,0 +1,20 @@
+Completed this entire series, Thanks for the explanation.
+
+1. Terraform migration ( using import and then running terraform import command which will create a state file).
+
+- This will import the EC2 instance all details which was created manually.
+
+- Importing EC2 instance to create a state file.
+
+
+# 2. Terraform drift detection ( if some one manually changed any settings for any resource, then detecting that change is called drift detection).
+
+# There are 2 ways to detect it.
+
+Scenario 1: Use terraform refresh using a cron job. ( terraform refresh, refershes the recents changes which was done manually to the statefile and keeps it updated.
+
+Scenario 2: 
+
+- A) Use audit/activity logs to see who made changes, if its changed by user and resources is managed by TF, then send an alert using lambda/azure functions and notify.
+
+- B) Apply strict IAM rules so that no one can login to console.
